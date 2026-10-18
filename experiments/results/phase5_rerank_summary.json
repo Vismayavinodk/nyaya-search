@@ -1,0 +1,32 @@
+[
+  {
+    "Configuration":"Hybrid Baseline (BM25 + Dense BGE, alpha=0.35)",
+    "Type":"First-Stage Hybrid Pool",
+    "Dev nDCG@10":0.0601368402,
+    "Test nDCG@10":0.0631148137,
+    "Test MAP":0.0565020704,
+    "Test Recall@10":0.0583333333,
+    "Test Recall@20":0.0833333333,
+    "Test MRR":0.092863354
+  },
+  {
+    "Configuration":"Option A: LightGBM LambdaMART (Best Iter=2)",
+    "Type":"Supervised LTR (LambdaMART)",
+    "Dev nDCG@10":0.0222915902,
+    "Test nDCG@10":0.0059216382,
+    "Test MAP":0.0064463038,
+    "Test Recall@10":0.0066666667,
+    "Test Recall@20":0.0333333333,
+    "Test MRR":0.0148530931
+  },
+  {
+    "Configuration":"Option B: Cross-Encoder (ms-marco-MiniLM-L-6-v2, top-30)",
+    "Type":"Cross-Encoder Transformer",
+    "Dev nDCG@10":0.0141745967,
+    "Test nDCG@10":0.0426995597,
+    "Test MAP":0.0277831197,
+    "Test Recall@10":0.0633333333,
+    "Test Recall@20":0.0633333333,
+    "Test MRR":0.0549358974
+  }
+]

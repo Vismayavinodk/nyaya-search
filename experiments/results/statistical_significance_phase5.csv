@@ -1,0 +1,4 @@
+Comparison,metric,queries_evaluated,mean_baseline,mean_treatment,relative_gain_percent,t_statistic,t_pvalue,wilcoxon_statistic,wilcoxon_pvalue,bootstrap_pvalue,bootstrap_ci_lower,bootstrap_ci_upper,is_significant_p05
+Option A (LightGBM) vs Hybrid Baseline,ndcg@10,50,0.0631,0.0059,-90.6177,-1.9505,0.0568,0.0,0.0422,0.014,-0.1235,-0.0078,True
+Option B (Cross-Encoder) vs Hybrid Baseline,ndcg@10,50,0.0631,0.0427,-32.3462,-1.3322,0.189,2.0,0.138,0.134,-0.0542,0.0037,False
+Option A (LightGBM) vs Option B (Cross-Encoder),ndcg@10,50,0.0427,0.0059,-86.1319,-2.2128,0.0316,0.0,0.0277,0.01,-0.0726,-0.0074,True

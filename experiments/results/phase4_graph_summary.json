@@ -1,0 +1,32 @@
+[
+  {
+    "Configuration":"Phase 2: Tuned BM25 Baseline",
+    "Type":"Lexical",
+    "Dev nDCG@10":0.2889649879,
+    "Test nDCG@10":0.2910293152,
+    "Test MAP":0.2361191288,
+    "Test Recall@10":0.3892221463,
+    "Test Recall@20":0.4939942113,
+    "Test MRR":0.3363042278
+  },
+  {
+    "Configuration":"Phase 3: Hybrid Weighted Score",
+    "Type":"Hybrid (BM25+Dense)",
+    "Dev nDCG@10":0.0617,
+    "Test nDCG@10":0.0631148137,
+    "Test MAP":0.057,
+    "Test Recall@10":0.0583333333,
+    "Test Recall@20":0.0833333333,
+    "Test MRR":0.093
+  },
+  {
+    "Configuration":"Phase 4: Graph-Interpolated (in_degree, beta=0.15)",
+    "Type":"Graph-Augmented",
+    "Dev nDCG@10":0.2943699141,
+    "Test nDCG@10":0.2949049957,
+    "Test MAP":0.2368982881,
+    "Test Recall@10":0.3962939084,
+    "Test Recall@20":0.4957957733,
+    "Test MRR":0.3404384507
+  }
+]

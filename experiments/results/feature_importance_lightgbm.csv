@@ -1,0 +1,6 @@
+Feature,Importance_Gain,Importance_Split
+dense_score,77.49158285924932,21.0
+bm25_score,68.1470957103486,15.0
+doc_length,47.180556210223585,12.0
+pagerank,0.0,0.0
+in_degree,0.0,0.0

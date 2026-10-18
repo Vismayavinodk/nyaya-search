@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Virtual Envs
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Data & Indices (ignore heavy datasets & caches, keep sample benchmark for tests)
+data/raw/
+data/processed/
+data/cache/
+data/indices/
+!data/sample/
+
+# Logs & Results caches
+logs/
+experiments/results/*.pkl
+.pytest_cache/
+
+# OS specific
+.DS_Store
+Thumbs.db

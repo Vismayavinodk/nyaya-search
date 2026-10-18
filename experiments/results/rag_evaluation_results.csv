@@ -1,0 +1,36 @@
+question_id,domain,is_answerable,is_refusal,evidence_score,faithfulness,citation_precision,citation_recall,citation_f1,correct_behavior,cited_docs_count,gold_docs_count
+QA_001,Constitutional Law,True,False,0.728,0.8333,1.0,0.5,0.6667,True,1,2
+QA_002,Constitutional Law,True,False,0.7502,0.8125,1.0,1.0,1.0,True,1,1
+QA_003,Constitutional Law,True,False,0.6947,0.8333,1.0,1.0,1.0,True,1,1
+QA_004,Constitutional Law,True,False,0.7434,0.8696,1.0,1.0,1.0,True,1,1
+QA_005,Constitutional Law,True,False,0.7947,0.8235,1.0,1.0,1.0,True,1,1
+QA_006,Constitutional Law,True,True,0.578,1.0,0.0,0.0,0.0,False,0,1
+QA_007,Constitutional Law,True,False,0.7502,0.8235,1.0,1.0,1.0,True,1,1
+QA_008,Administrative Law,True,True,0.5724,1.0,0.0,0.0,0.0,False,0,1
+QA_009,Family & Constitutional Law,True,False,0.728,0.7692,1.0,1.0,1.0,True,1,1
+QA_010,Criminal & Constitutional Law,True,False,0.7947,0.8333,1.0,1.0,1.0,True,1,1
+QA_011,Criminal Procedure,True,False,0.678,0.8421,1.0,1.0,1.0,True,1,1
+QA_012,Criminal Procedure,True,False,0.628,0.8125,1.0,1.0,1.0,True,1,1
+QA_013,Criminal Procedure,True,False,0.7098,0.8333,1.0,1.0,1.0,True,1,1
+QA_014,Criminal Procedure,True,False,0.7098,0.8235,1.0,1.0,1.0,True,1,1
+QA_015,Prisoners Rights,True,False,0.7058,0.8235,1.0,1.0,1.0,True,1,1
+QA_016,Constitutional Torts,True,False,0.7825,0.8333,1.0,1.0,1.0,True,1,1
+QA_017,Criminal Law,True,True,0.6169,1.0,0.0,0.0,0.0,False,0,1
+QA_018,Environmental Law & Torts,True,True,0.6169,1.0,0.0,0.0,0.0,False,0,1
+QA_019,Labour & Gender Law,True,False,0.688,0.8125,1.0,1.0,1.0,True,1,1
+QA_020,Medical Law & Article 21,True,False,0.6735,0.8235,1.0,1.0,1.0,True,1,1
+QA_021,Constitutional Law,True,False,0.6423,0.7857,1.0,1.0,1.0,True,1,1
+QA_022,Labour Law,True,False,0.7947,0.8,1.0,1.0,1.0,True,1,1
+QA_023,Education Law,True,False,0.7825,0.5,1.0,1.0,1.0,True,1,1
+QA_024,Constitutional Law,True,False,0.648,0.8333,1.0,0.5,0.6667,True,1,2
+QA_025,Constitutional Law,True,False,0.6818,0.8235,1.0,0.5,0.6667,True,1,2
+QA_REFUSAL_001,Unsupported/Adversarial,False,True,0.1053,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_002,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_003,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_004,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_005,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_006,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_007,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_008,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_009,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0
+QA_REFUSAL_010,Unsupported/Adversarial,False,True,0.072,1.0,1.0,1.0,1.0,True,0,0

@@ -1,0 +1,90 @@
+# Master Configuration for Citation-Aware Legal Case Retrieval
+# Project: Legal Case Retrieval for Indian Court Judgments
+
+project:
+  name: "indian-legal-case-retrieval"
+  version: "1.0.0"
+  author: "Vismaya"
+  seed: 42
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  sample_data_dir: "data/sample"
+  index_dir: "data/indices"
+  cache_dir: "data/cache"
+  output_dir: "experiments/results"
+  log_dir: "logs"
+
+data:
+  dataset_name: "sample"  # Options: 'sample', 'il_pcr', 'fire_aila'
+  train_split_ratio: 0.70
+  val_split_ratio: 0.15
+  test_split_ratio: 0.15
+  max_case_chars: 100000   # Truncation safety limit for raw long texts
+  normalize_citations: true
+  remove_boilerplate: true
+
+preprocessing:
+  min_token_length: 2
+  max_token_length: 35
+  preserve_statutes: true
+  lower_case: true
+  legal_stopword_removal: true
+
+sparse_retrieval:
+  algorithm: "bm25_plus"   # Options: 'bm25_okapi', 'bm25_plus', 'bm25_l'
+  k1: 1.5
+  b: 0.75
+  delta: 0.5              # For BM25+
+  top_k: 100
+
+dense_retrieval:
+  # Free-tier GPU compatible models (e.g. Kaggle / Colab T4 16GB)
+  # Options: 'law-ai/InLegalBERT', 'BAAI/bge-small-en-v1.5', 'sentence-transformers/all-MiniLM-L6-v2'
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  max_seq_length: 512
+  chunk_size: 400
+  chunk_overlap: 50
+  pooling_strategy: "mean" # 'mean', 'max', 'first_k'
+  batch_size: 16
+  device: "auto"           # 'cuda', 'cpu', or 'auto'
+  normalize_embeddings: true
+  top_k: 100
+
+hybrid_fusion:
+  method: "rrf"            # Options: 'rrf' (Reciprocal Rank Fusion), 'convex' (Linear score combination)
+  rrf_k: 60                # Smoothing constant for RRF
+  convex_dense_weight: 0.5 # Alpha for convex combination: alpha * dense + (1 - alpha) * bm25
+  top_k: 50
+
+citation_graph:
+  directed: true
+  damping_factor: 0.85     # For PageRank
+  max_iter: 100
+  tol: 1e-6
+  ppr_teleport_weight: 0.2 # Weight for query-cited nodes in Personalized PageRank
+  use_co_citation: true
+  use_bibliographic_coupling: true
+
+reranker:
+  model_type: "xgboost"    # Options: 'xgboost', 'linear'
+  objective: "rank:ndcg"
+  metric: "ndcg@10"
+  learning_rate: 0.05
+  max_depth: 6
+  n_estimators: 150
+  subsample: 0.8
+  colsample_bytree: 0.8
+  early_stopping_rounds: 15
+
+evaluation:
+  metrics:
+    - "ndcg@5"
+    - "ndcg@10"
+    - "map"
+    - "recall@5"
+    - "recall@10"
+    - "recall@20"
+    - "mrr"
+  relevance_threshold: 1   # Binary cutoff if relevance scores are graded

@@ -1,0 +1,8 @@
+Feature,Pearson_r,Pearson_pvalue,Spearman_rho,Spearman_pvalue,Statistically_Significant
+Personalized PageRank (PPR),0.1647,0.0,0.154,0.0,True
+Statute Jaccard Overlap,0.0936,0.0,0.0827,0.0,True
+Base Retrieval Score,0.069,0.0,0.0546,0.0,True
+PageRank,0.0388,0.0,0.0287,0.0,True
+In-Degree Centrality,0.0371,0.0,0.0268,0.0,True
+HITS Authority,-0.0154,0.00654,0.0128,0.02346,True
+HITS Hub,-0.0173,0.00218,-0.0495,0.0,True

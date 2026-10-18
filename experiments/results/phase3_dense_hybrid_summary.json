@@ -1,0 +1,72 @@
+[
+  {
+    "Configuration":"0. Tuned BM25 Baseline (k1=2.2, b=0.85)",
+    "Type":"Lexical",
+    "Dev nDCG@10":0.0582763782,
+    "Test nDCG@10":0.0631148137,
+    "Test MAP":0.055,
+    "Test Recall@10":0.0583333333,
+    "Test Recall@20":0.0583333333,
+    "Test MRR":0.09
+  },
+  {
+    "Configuration":"Dense: BGE Small (General Retrieval)",
+    "Type":"Dense (max)",
+    "Dev nDCG@10":0.014087648,
+    "Test nDCG@10":0.0099052673,
+    "Test MAP":0.0065921856,
+    "Test Recall@10":0.025,
+    "Test Recall@20":0.0633333333,
+    "Test MRR":0.0123003663
+  },
+  {
+    "Configuration":"Dense: BGE Small (Mean Pooling Ablation)",
+    "Type":"Dense (mean)",
+    "Dev nDCG@10":0.0534891938,
+    "Test nDCG@10":0.0388369748,
+    "Test MAP":0.0226875522,
+    "Test Recall@10":0.0633333333,
+    "Test Recall@20":0.0833333333,
+    "Test MRR":0.0562431078
+  },
+  {
+    "Configuration":"Dense: InLegalBERT (Legal Domain Specific)",
+    "Type":"Dense (max)",
+    "Dev nDCG@10":0.0043681487,
+    "Test nDCG@10":0.0098371832,
+    "Test MAP":0.0043703704,
+    "Test Recall@10":0.0266666667,
+    "Test Recall@20":0.0333333333,
+    "Test MRR":0.0064444444
+  },
+  {
+    "Configuration":"Dense: Multilingual-E5 Small (Semantic)",
+    "Type":"Dense (max)",
+    "Dev nDCG@10":0.0047439543,
+    "Test nDCG@10":0.0229608191,
+    "Test MAP":0.0208333333,
+    "Test Recall@10":0.0266666667,
+    "Test Recall@20":0.0266666667,
+    "Test MRR":0.0225
+  },
+  {
+    "Configuration":"Hybrid RRF (k=80)",
+    "Type":"Hybrid (Rank)",
+    "Dev nDCG@10":0.0602242008,
+    "Test nDCG@10":0.0531148137,
+    "Test MAP":0.0436217949,
+    "Test Recall@10":0.0583333333,
+    "Test Recall@20":0.0833333333,
+    "Test MRR":0.0798717949
+  },
+  {
+    "Configuration":"Hybrid Weighted Score (alpha=0.35)",
+    "Type":"Hybrid (Score)",
+    "Dev nDCG@10":0.0617071731,
+    "Test nDCG@10":0.0631148137,
+    "Test MAP":0.057,
+    "Test Recall@10":0.0583333333,
+    "Test Recall@20":0.0833333333,
+    "Test MRR":0.093
+  }
+]

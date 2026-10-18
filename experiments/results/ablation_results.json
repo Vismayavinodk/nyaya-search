@@ -1,0 +1,52 @@
+[
+  {
+    "Configuration":"1. BM25 Alone",
+    "ndcg@5":0.9072836012,
+    "ndcg@10":0.9608857006,
+    "map":0.7666666667,
+    "recall@5":0.6666666667,
+    "recall@10":1.0,
+    "recall@20":1.0,
+    "mrr":1.0
+  },
+  {
+    "Configuration":"2. Dense Alone",
+    "ndcg@5":0.9072836012,
+    "ndcg@10":0.9631044354,
+    "map":0.7777777778,
+    "recall@5":0.6666666667,
+    "recall@10":1.0,
+    "recall@20":1.0,
+    "mrr":1.0
+  },
+  {
+    "Configuration":"3. Hybrid (BM25 + Dense RRF)",
+    "ndcg@5":0.9072836012,
+    "ndcg@10":0.9608857006,
+    "map":0.7666666667,
+    "recall@5":0.6666666667,
+    "recall@10":1.0,
+    "recall@20":1.0,
+    "mrr":1.0
+  },
+  {
+    "Configuration":"4. Hybrid + Citation Graph",
+    "ndcg@5":0.7031666714,
+    "ndcg@10":0.7031666714,
+    "map":0.8055555556,
+    "recall@5":1.0,
+    "recall@10":1.0,
+    "recall@20":1.0,
+    "mrr":1.0
+  },
+  {
+    "Configuration":"5. Full LTR Reranker (LambdaMART)",
+    "ndcg@5":0.9790187995,
+    "ndcg@10":0.9790187995,
+    "map":0.8666666667,
+    "recall@5":1.0,
+    "recall@10":1.0,
+    "recall@20":1.0,
+    "mrr":1.0
+  }
+]

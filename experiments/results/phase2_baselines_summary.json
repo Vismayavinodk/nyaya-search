@@ -1,0 +1,42 @@
+[
+  {
+    "Model":"1. TF-IDF Baseline",
+    "Dev nDCG@10":0.3708764933,
+    "Dev MAP":0.307792772,
+    "Test nDCG@10":0.3854364123,
+    "Test MAP":0.3235092343,
+    "Test Recall@10":0.4740904153,
+    "Test Recall@20":0.5807334616,
+    "Test MRR":0.45692395
+  },
+  {
+    "Model":"2. BM25 Default (k1=1.5, b=0.75)",
+    "Dev nDCG@10":0.2659554767,
+    "Dev MAP":0.2148177906,
+    "Test nDCG@10":0.2640130467,
+    "Test MAP":0.2084626082,
+    "Test Recall@10":0.3620945083,
+    "Test Recall@20":0.4465787452,
+    "Test MRR":0.3090927692
+  },
+  {
+    "Model":"3. BM25 Tuned (k1=2.2, b=0.85)",
+    "Dev nDCG@10":0.2889649879,
+    "Dev MAP":0.2363545331,
+    "Test nDCG@10":0.2910293152,
+    "Test MAP":0.2361191288,
+    "Test Recall@10":0.3892221463,
+    "Test Recall@20":0.4939942113,
+    "Test MRR":0.3363042278
+  },
+  {
+    "Model":"4. BM25+ Tuned (k1=1.8, b=0.85, d=0.25)",
+    "Dev nDCG@10":0.2721037405,
+    "Dev MAP":0.2186606577,
+    "Test nDCG@10":0.2692294024,
+    "Test MAP":0.2124522086,
+    "Test Recall@10":0.3685200316,
+    "Test Recall@20":0.4464456248,
+    "Test MRR":0.3130198849
+  }
+]

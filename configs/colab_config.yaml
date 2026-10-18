@@ -1,0 +1,93 @@
+# Google Colab / Kaggle Configuration for Citation-Aware Legal Case Retrieval
+# Optimized for free T4 16GB GPU execution
+
+project:
+  name: "indian-legal-case-retrieval-colab"
+  version: "1.0.0"
+  author: "Vismaya"
+  seed: 42
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  sample_data_dir: "data/sample"
+  index_dir: "data/indices"
+  cache_dir: "data/cache"
+  output_dir: "experiments/results"
+  log_dir: "logs"
+
+data:
+  dataset_name: "il_pcr"   # Default to IL-PCR on Colab
+  train_split_ratio: 0.70
+  val_split_ratio: 0.15
+  test_split_ratio: 0.15
+  max_case_chars: 100000
+  normalize_citations: true
+  remove_boilerplate: true
+
+preprocessing:
+  min_token_length: 2
+  max_token_length: 35
+  preserve_statutes: true
+  lower_case: true
+  legal_stopword_removal: true
+
+sparse_retrieval:
+  algorithm: "bm25_plus"
+  k1: 1.5
+  b: 0.75
+  delta: 0.5
+  top_k: 100
+
+dense_retrieval:
+  # Embedding models: 'BAAI/bge-small-en-v1.5', 'law-ai/InLegalBERT', 'intfloat/multilingual-e5-small'
+  model_name: "BAAI/bge-small-en-v1.5"
+  max_seq_length: 512
+  chunk_size: 400
+  chunk_overlap: 50
+  max_chunks_per_case: 6   # Samples head and tail chunks for long judgments
+  pooling_strategy: "max"  # 'max', 'mean'
+  batch_size: 32           # Higher batch size on Colab T4
+  device: "cuda"
+  normalize_embeddings: true
+  use_faiss: true
+  faiss_index_type: "flat_ip"
+  checkpoint_interval: 100
+  top_k: 100
+
+hybrid_fusion:
+  method: "rrf"
+  rrf_k: 60
+  convex_dense_weight: 0.5
+  top_k: 50
+
+citation_graph:
+  directed: true
+  damping_factor: 0.85
+  max_iter: 100
+  tol: 1e-6
+  ppr_teleport_weight: 0.2
+  use_co_citation: true
+  use_bibliographic_coupling: true
+
+reranker:
+  model_type: "xgboost"
+  objective: "rank:ndcg"
+  metric: "ndcg@10"
+  learning_rate: 0.05
+  max_depth: 6
+  n_estimators: 150
+  subsample: 0.8
+  colsample_bytree: 0.8
+  early_stopping_rounds: 15
+
+evaluation:
+  metrics:
+    - "ndcg@5"
+    - "ndcg@10"
+    - "map"
+    - "recall@5"
+    - "recall@10"
+    - "recall@20"
+    - "mrr"
+  relevance_threshold: 1
